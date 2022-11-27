@@ -1,14 +1,9 @@
-cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
-set(CMAKE_CXX_STANDARD 20)
+cmake_minimum_required(VERSION 3.14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-include(CPM.cmake)
-CPMAddPackage(
-    NAME matplotplusplus
-    GITHUB_REPOSITORY alandefreitas/matplotplusplus
-    GIT_TAG origin/master
-)
+set(CMAKE_CXX_STANDARD 20)
 
 project(tp_hw_1)
+find_package(Matplot++ REQUIRED)
 add_executable(benchmark benchmark.cpp)
-target_link_libraries(benchmark PUBLIC matplot)
+set_property(TARGET benchmark PROPERTY CXX_STANDARD 20)
+target_link_libraries(benchmark PUBLIC Matplot++::matplot)

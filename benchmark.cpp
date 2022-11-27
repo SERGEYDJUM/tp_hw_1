@@ -1,6 +1,8 @@
 #include <chrono>
 #include <matplot/matplot.h>
+#include "solutions.cpp"
 
 int main() {
-    return 0;
+    using namespace matplot;
+    
 }

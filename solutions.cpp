@@ -11,13 +11,11 @@ struct Solution {
 
     Solution() {}
 
-    void prepare(std::string &inp) {
+    void prepare(const std::string &inp) {
         cin = std::istringstream(inp);
     }
 
-    void sol_one() {
-        int n = 0;
-        cin >> n;
+    void solve_first(int n) {
         std::vector<int> as(200001, -1);
         for (int i = 0; i < n; i += 1) {
             int idx = 0;
@@ -27,9 +25,7 @@ struct Solution {
         cout << std::distance(as.begin(), std::max_element(as.begin(), as.end()));
     }
 
-    void sol_two() {
-        int n = 0;
-        cin >> n;
+    void solve_second(int n) {
         std::vector<int> data(n, 0);
         for (int i = 0; i < n; i += 1) {
             cin >> data[i];
